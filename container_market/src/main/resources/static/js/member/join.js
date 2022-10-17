@@ -1,14 +1,28 @@
 function memberJoinAction() {
-    let user = {
-        username: document.querySelector("#member_id").value,
-        password: document.querySelector("#passwd").value,
-        password_confirm: document.querySelector("#user_passwd_confirm").value,
-        name: document.querySelector("#name").value,
-        mobile1: document.querySelector("#mobile1").value,
-        mobile2: document.querySelector("#mobile2").value,
-        mobile3: document.querySelector("#mobile3").value,
-        email: document.querySelector("#email1").value
+    const username = document.querySelector("#member_id");
+    const password = document.querySelector("#passwd");
+    const password_confirm = document.querySelector("#user_passwd_confirm");
+    const name = document.querySelector("#name");
+    const mobile1 = document.querySelector("#mobile1");
+    const mobile2 = document.querySelector("#mobile2");
+    const mobile3 = document.querySelector("#mobile3");
+    const email = document.querySelector("#email1");
+
+    if(password.value != password_confirm.value) {
+        alert("Passwords do not match");
+        return;
     }
+
+    let mobile = mobile1.value + mobile2.value + mobile3.value;
+
+    let user = {
+        username: username.value,
+        password: password.value,
+        name: name.value,
+        mobile: mobile,
+        email: email.value
+    }
+
     console.log(user);
 
     let ajaxOption = {
