@@ -34,8 +34,8 @@ function memberJoinAction() {
         dataType: "json",
         success: (response, textStatus, request) => {
             console.log(response);
-            // const successURI = request.getResponseHeader("location");
-            // location.replace(successURI + "?email=" + response.data);
+             const successURI = request.getResponseHeader("location");
+             location.replace(successURI + "?username=" + response.data);
         },
         error: (error) => {
             console.log(error.responseJSON);
