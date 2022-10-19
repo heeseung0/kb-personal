@@ -38,6 +38,8 @@ public class JoinReqDto {
     @Email
     private String email;
 
+    private String role;
+
     public User toEntity(){
         return User.builder()
                 .username(username)
@@ -45,6 +47,7 @@ public class JoinReqDto {
                 .name(name)
                 .phone(mobile)
                 .email(email)
+                .role(role)
                 .build();
     }
 }

@@ -20,7 +20,8 @@ function memberJoinAction() {
         password: password.value,
         name: name.value,
         mobile: mobile,
-        email: email.value
+        email: email.value,
+        role: 1
     }
 
     console.log(user);
