@@ -15,7 +15,7 @@
         <result property="update_date" column="update_date"/>
     </resultMap>
 
-    <select id="findMemberByID" parameterType="String" resultMap="user">
+    <select id="findUserByID" parameterType="String" resultMap="user">
         select
             um.id,
             um.username,
@@ -24,7 +24,7 @@
             um.phone,
             um.email,
             um.create_date,
-            um.update_date,
+            um.update_date
         from
             user_mst um
         where

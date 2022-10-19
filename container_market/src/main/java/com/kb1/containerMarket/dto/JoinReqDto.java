@@ -3,6 +3,7 @@ package com.kb1.containerMarket.dto;
 import com.kb1.containerMarket.domain.User;
 import com.kb1.containerMarket.dto.validation.ValidationGroups;
 import lombok.Data;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -40,7 +41,7 @@ public class JoinReqDto {
     public User toEntity(){
         return User.builder()
                 .username(username)
-                .password(password)
+                .password(new BCryptPasswordEncoder().encode(password))
                 .name(name)
                 .phone(mobile)
                 .email(email)

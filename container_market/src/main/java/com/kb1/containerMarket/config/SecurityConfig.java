@@ -25,8 +25,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/member/mypage", "/index")
                 .authenticated()
-                .antMatchers("/admin/**")
-                .hasRole("ADMIN")
                 .anyRequest()
                 .permitAll()
                 .and()
@@ -35,6 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/member/login")            // login page (Get 요청)
                 .loginProcessingUrl("/member/login")   //  login service (Post요청)
                 .failureHandler(new AuthFailureHandler())
-                .defaultSuccessUrl("/index");
+                .defaultSuccessUrl("/");
     }
 }
