@@ -17,7 +17,7 @@ public class User {
     private String name;
     private String phone;
     private String email;
-    private String role;
+    private String role;    //1:일반, 3:관리자
     private String create_date;
     private String update_date;
 
