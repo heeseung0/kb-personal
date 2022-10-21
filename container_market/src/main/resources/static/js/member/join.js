@@ -40,11 +40,17 @@ function memberJoinAction() {
         },
         error: (error) => {
             console.log(error.responseJSON);
-            window.alert("문제있음");
+            alertErrorMessage(error.responseJSON.data);
             // loadErrorMessage(error.responseJSON.data);
             // errorBox(error.responseJSON.data);
         }
     }
 
     $.ajax(ajaxOption);
+}
+
+function alertErrorMessage(errors){
+    const errorArray = Object.values(errors);
+
+    window.alert(errorArray[0]);
 }
