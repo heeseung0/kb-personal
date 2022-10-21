@@ -41,8 +41,6 @@ function memberJoinAction() {
         error: (error) => {
             console.log(error.responseJSON);
             alertErrorMessage(error.responseJSON.data);
-            // loadErrorMessage(error.responseJSON.data);
-            // errorBox(error.responseJSON.data);
         }
     }
 
