@@ -2,6 +2,7 @@ package com.kb1.containerMarket.api;
 
 
 import com.kb1.containerMarket.aop.annotation.LogAspect;
+import com.kb1.containerMarket.aop.annotation.ValidAspect;
 import com.kb1.containerMarket.dto.CMRespDto;
 import com.kb1.containerMarket.dto.JoinReqDto;
 import com.kb1.containerMarket.dto.validation.ValidationSequence;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 
@@ -26,6 +28,7 @@ public class MemberApi {
     private final AccountService accountService;
 
     @LogAspect
+    @ValidAspect
     @PostMapping("/join")
     public ResponseEntity<?> join(@Validated(ValidationSequence.class) @RequestBody JoinReqDto joinReqDto, BindingResult bindingResult) throws Exception{
         accountService.register(joinReqDto);
