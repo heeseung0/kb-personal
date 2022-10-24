@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head :: head"/>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="/static/css/myShopOrder.css">
+</head>
+<body>
+<div class="container">
+    <header th:replace="/fragments/header :: header"/>
+    <main id="main">
+        <nav th:replace="/fragments/nav :: nav"/>
+        <div id="contents">
+            <div class="title"><h3>주문 상품 정보</h3></div>
+            <table>
+                <caption>주문 상품 정보</caption>
+                <thead>
+                <tr>
+                    <th scope="col">주문일자<br>[주문번호]</th>
+                    <th scope="col">이미지</th>
+                    <th scope="col">상품정보</th>
+                    <th scope="col">수량</th>
+                    <th scope="col">상품구매금액</th>
+                    <th scope="col">주문처리상태</th>
+                    <th scope="col">취소/교환/반품</th>
+                </tr>
+                </thead>
+                <tbody class="order-list">
+                <tr>
+                    <td class="number">주문일자</td>
+                    <td class="thumb">썸네일</td>
+                    <td class="product left top">정보</td>
+                    <td></td>
+                    <td class="right">금액</td>
+                    <td class="state">처리상태</td>
+                    <td>취소</td>
+                </tr>
+                <tr>
+                    <td class="number">주문일자</td>
+                    <td class="thumb">썸네일</td>
+                    <td class="product left top">정보</td>
+                    <td></td>
+                    <td class="right">금액</td>
+                    <td class="state">처리상태</td>
+                    <td>취소</td>
+                </tr>
+                <tr>
+                    <td class="number">주문일자</td>
+                    <td class="thumb">썸네일</td>
+                    <td class="product left top">정보</td>
+                    <td></td>
+                    <td class="right">금액</td>
+                    <td class="state">처리상태</td>
+                    <td>취소</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer></footer>
+
+
+</div>
+</body>
+</html>
