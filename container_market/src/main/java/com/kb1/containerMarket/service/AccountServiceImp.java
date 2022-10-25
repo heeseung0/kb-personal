@@ -18,6 +18,17 @@ public class AccountServiceImp implements AccountService {
     private final AccountRepository accountRepository;
 
     @Override
+    public User getUser(String username) throws Exception {
+        User user = accountRepository.findUserByID(username);
+
+        if(user != null){
+            return user;
+        }else{
+            return null;
+        }
+    }
+
+    @Override
     public void duplicateUser(JoinReqDto joinReq) throws Exception {
         User user = accountRepository.findUserByID(joinReq.getUsername());
 

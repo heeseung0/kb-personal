@@ -2,6 +2,7 @@ package com.kb1.containerMarket.api.session;
 
 
 import com.kb1.containerMarket.dto.CMRespDto;
+import com.kb1.containerMarket.security.PrincipalDetails;
 import com.kb1.containerMarket.service.session.UserInfoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
