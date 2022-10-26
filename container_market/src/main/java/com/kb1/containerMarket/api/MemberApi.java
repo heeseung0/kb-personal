@@ -34,4 +34,11 @@ public class MemberApi {
         accountService.register(joinReqDto);
         return ResponseEntity.created(URI.create("/member/login")).body(new CMRespDto<>("회원가입 성공", joinReqDto.getUsername()));
     }
+
+    @LogAspect
+    @ValidAspect
+    @PostMapping("/modify")
+    public ResponseEntity<?> modify(){
+        return ResponseEntity.ok().body(new CMRespDto<>("회원수정 성공", null));
+    }
 }

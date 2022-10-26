@@ -14,12 +14,12 @@ window.onload = () => {
                 hrefJoin.innerHTML = `<a href="/member/join">JOIN</a>`;
             }else{
                 hrefLogin.innerHTML = `<a href="/logout">LOGOUT</a>`;
-                hrefJoin.innerHTML = `<a href="/member/modify">MODIFY</a>`;
+                if(response.data.role_id == 3){
+                    hrefJoin.innerHTML = `<a href="/admin/index">ADMIN PAGE</a>`;
+                }else {
+                    hrefJoin.innerHTML = `<a href="/member/modify">MODIFY</a>`;
+                }
             }
-
-
-
-
         },
         error: (error) => {
             console.log(error.responseJSON);
