@@ -30,7 +30,7 @@ function update() {
         dataType: "json",
         success: (response) => {
             alert("회원정보 수정 완료");
-            location.replace("/");
+            location.replace("/logout");
         },
         error: (error) => {
             console.log(error.responseJSON);
