@@ -6,11 +6,13 @@ import com.kb1.containerMarket.exception.CustomInternalServerErrorException;
 import com.kb1.containerMarket.exception.CustomValidationException;
 import com.kb1.containerMarket.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AccountServiceImp implements AccountService {
@@ -45,6 +47,14 @@ public class AccountServiceImp implements AccountService {
         int result = accountRepository.saveUser(user);
         if (result == 0) {
             throw new CustomInternalServerErrorException("회원가입 중 문제가 발생하였습니다.");
+        }
+    }
+
+    @Override
+    public void updateUser(JoinReqDto joinReqDto) throws Exception {
+        int result = accountRepository.updateUser(joinReqDto.toEntity());
+        if (result == 0){
+            throw new CustomInternalServerErrorException("회원수정 중 문제가 발생하였습니다.");
         }
     }
 }

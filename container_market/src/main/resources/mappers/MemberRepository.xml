@@ -56,4 +56,18 @@
             now()
         )
     </insert>
+
+    <update id="updateUser" parameterType="com.kb1.containerMarket.domain.User">
+        update
+            user_mst
+        set
+            username = #{username},
+            password = #{password},
+            name = #{name},
+            phone = #{phone},
+            email = #{email},
+            update_date = now()
+        where
+            username = #{username}
+    </update>
 </mapper>

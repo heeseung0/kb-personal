@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 import java.net.URI;
 
 
@@ -39,7 +38,8 @@ public class MemberApi {
     @LogAspect
     @ValidAspect
     @PostMapping("/modify")
-    public ResponseEntity<?> modify(){
+    public ResponseEntity<?> modify(@RequestBody JoinReqDto joinReqDto, BindingResult bindingResult) throws Exception{
+        accountService.updateUser(joinReqDto);
         return ResponseEntity.ok().body(new CMRespDto<>("회원수정 성공", null));
     }
 }

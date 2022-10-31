@@ -12,8 +12,6 @@ import javax.validation.constraints.Size;
 
 @Data
 public class JoinReqDto {
-
-
     @NotBlank(message = "아이디는 비워 둘 수 없습니다.", groups = ValidationGroups.NotBlankGroup.class)
     @Size(min = 4, max = 16, message = "아이디 항목은 필수 입력값입니다.", groups = ValidationGroups.SizeGroup.class)
     @Pattern(regexp = "^[a-zA-Z0-9]*$", message = "아이디는 대소문자와 숫자만 입력 가능합니다.", groups = ValidationGroups.PatternCheckGroup.class)
