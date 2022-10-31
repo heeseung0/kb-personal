@@ -29,8 +29,8 @@ public class AccountServiceImp implements AccountService {
     }
 
     @Override
-    public void duplicateUser(JoinReqDto joinReq) throws Exception {
-        User user = accountRepository.findUserByID(joinReq.getUsername());
+    public void duplicateUser(String username) throws Exception {
+        User user = accountRepository.findUserByID(username);
 
         if (user != null) {
             Map<String, String> errorMap = new HashMap<String, String>();

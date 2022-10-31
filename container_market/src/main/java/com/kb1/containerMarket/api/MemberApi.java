@@ -31,6 +31,7 @@ public class MemberApi {
     @ValidAspect
     @PostMapping("/join")
     public ResponseEntity<?> join(@Validated(ValidationSequence.class) @RequestBody JoinReqDto joinReqDto, BindingResult bindingResult) throws Exception{
+        accountService.duplicateUser(joinReqDto.getUsername());
         accountService.register(joinReqDto);
         return ResponseEntity.created(URI.create("/member/login")).body(new CMRespDto<>("회원가입 성공", joinReqDto.getUsername()));
     }
